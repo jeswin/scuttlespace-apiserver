@@ -1,0 +1,24 @@
+{
+  "name": "scuttlespace-apiserver",
+  "version": "0.0.1",
+  "author": "Jeswin Kumar<jeswinpk@agilehead.com>",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "./build.sh",
+    "start": "./build.sh && node dist/index",
+    "test": "./build.sh && mocha dist/test/test.js"
+  },
+  "license": "AGPL-1.0",
+  "dependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/node": "^10.5.2",
+    "koa": "^2.5.1",
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.4",
+    "@types/should": "^13.0.0",
+    "mocha": "^5.2.0",
+    "should": "^13.2.1"
+  }
+}

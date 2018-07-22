@@ -1,0 +1,9 @@
+src/*
+dist/test/*
+build.sh
+test-env.sh
+.gitignore
+.vscode
+tsconfig.json
+tslint.json
+yarn.lock
