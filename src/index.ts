@@ -1,22 +1,24 @@
+import { makeExecutableSchema } from "graphql-tools";
 import Koa = require("koa");
+import typeDefs from "./schema";
 
 const { ApolloServer, gql } = require("apollo-server-koa");
-
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Query {
-    user: String
-  }
-`;
 
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
     user: (root: any, args: any) => {
-      
+      return {
+        username: "jes"
+      };
     }
   }
 };
+
+export default makeExecutableSchema({
+  resolvers: {},
+  typeDefs
+});
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
