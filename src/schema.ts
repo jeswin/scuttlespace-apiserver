@@ -1,16 +1,18 @@
 import { graphqlSchema as UserSchema } from "scuttlespace-service-user";
 
-const RootQuery = `
+const typeDefs = [
+  `
   type Query {
     user(rowid: String, domain: String): ScuttlespaceUser
   }
-`;
-
-const SchemaDefinition = `
   schema {
     query: Query
   }
-`;
+`
+];
+
+const resolvers = {
+  
+}
 
 export const schema = [SchemaDefinition, RootQuery, UserSchema];
-

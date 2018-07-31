@@ -1,19 +1,9 @@
 import { makeExecutableSchema } from "graphql-tools";
 import Koa = require("koa");
+import { merge } from 'lodash';
 import typeDefs from "./schema";
 
 const { ApolloServer, gql } = require("apollo-server-koa");
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    user: (root: any, args: any) => {
-      return {
-        username: "jes"
-      };
-    }
-  }
-};
 
 export default makeExecutableSchema({
   resolvers: {},
