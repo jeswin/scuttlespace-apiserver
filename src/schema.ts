@@ -1,18 +1,23 @@
+import { GraphQLSchema } from "graphql";
+import { makeExecutableSchema } from "graphql-tools";
+import { merge } from "lodash";
 import { graphqlSchema as UserSchema } from "scuttlespace-service-user";
 
-const typeDefs = [
+const rootTypeDefs = [
   `
   type Query {
-    user(rowid: String, domain: String): ScuttlespaceUser
+    _nothing: String
   }
+
   schema {
     query: Query
   }
 `
 ];
 
-const resolvers = {
-  
-}
+const rootResolvers = {};
 
-export const schema = [SchemaDefinition, RootQuery, UserSchema];
+export default {
+  resolvers: merge(rootResolvers, UserSchema.resolvers) as any,
+  typeDefs: [...rootTypeDefs, ...UserSchema.typeDefs]
+};

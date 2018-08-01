@@ -1,16 +1,9 @@
-import { makeExecutableSchema } from "graphql-tools";
 import Koa = require("koa");
-import { merge } from 'lodash';
-import typeDefs from "./schema";
+import schema from "./schema";
 
 const { ApolloServer, gql } = require("apollo-server-koa");
 
-export default makeExecutableSchema({
-  resolvers: {},
-  typeDefs
-});
-
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer(schema);
 
 const app = new Koa();
 server.applyMiddleware({ app });

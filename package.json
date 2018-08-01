@@ -12,6 +12,7 @@
   "license": "AGPL-1.0",
   "dependencies": {
     "@types/koa": "^2.0.46",
+    "@types/lodash": "^4.14.115",
     "@types/node": "^10.5.2",
     "apollo-server-koa": "^2.0.0",
     "graphql": "^0.13.2",
