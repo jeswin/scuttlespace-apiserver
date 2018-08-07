@@ -1,17 +1,20 @@
 import { merge } from "lodash";
 import { graphqlSchema as UserSchema } from "scuttlespace-service-user";
 
-const rootTypeDefs = [
-  `
+const rootTypeDefs = `
   type Query {
+    _nothing: String
+  }
+
+  type Mutation {
     _nothing: String
   }
 
   schema {
     query: Query
+    mutation: Mutation
   }
-`
-];
+`;
 
 const rootResolvers = {};
 
@@ -27,5 +30,5 @@ function context({ req }: any) {
 export default {
   context,
   resolvers: merge(rootResolvers, UserSchema.resolvers) as any,
-  typeDefs: [...rootTypeDefs, ...UserSchema.typeDefs]
+  typeDefs: [rootTypeDefs, UserSchema.typeDefs]
 };
