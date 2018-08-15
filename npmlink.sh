@@ -1,2 +1,5 @@
-rm -rf ../scuttlespace-service-user/node_modules
-npm link ../scuttlespace-service-user
+npm link ../scuttlespace-service-user-graphql-schema
+
+pushd ../scuttlespace-service-user
+./npmlink.sh
+popd
