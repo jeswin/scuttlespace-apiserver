@@ -7,7 +7,7 @@ then
     echo scuttlespace-service-user-graphql-schema &&
     echo scuttlespace-service-user
   ) | basho -n proj -e 'cd ../${x} && npm link && [ -f npmlink.sh ] && ./npmlink.sh || echo skipped' \
-        -s proj -j '`update ${x}`'
+      -l x -s proj -j '`updated ${x}`'
 else
   echo "Install basho version 0.0.43 or higher."
 fi
