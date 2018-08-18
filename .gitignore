@@ -25,3 +25,4 @@ node_modules
 dist/*
 
 .DS_Store
+wireman.md5

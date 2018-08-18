@@ -7,3 +7,4 @@ test-env.sh
 tsconfig.json
 tslint.json
 yarn.lock
+wireman.md5
